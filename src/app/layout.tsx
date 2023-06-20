@@ -1,8 +1,11 @@
 import "./globals.css"
-import Head from "next/head"
+import localFont from "next/font/local"
 import { Inter } from "next/font/google"
 
 const inter = Inter({ subsets: ["latin"] })
+const nohemi = localFont({
+  src: "./font/Nohemi-VF.ttf",
+})
 
 export const metadata = {
   title: "Random Quote",
@@ -35,7 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${nohemi.className} ${inter.className}`}>
         <main className="flex min-h-screen items-center justify-center">
           {children}
         </main>
